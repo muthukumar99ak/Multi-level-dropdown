@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body *{
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card{
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  border-radius: 5px;
+  width: 450px;
+  max-width: 100%;
+  margin: 30px auto;
+}
+
+.form-label{
+  margin-bottom: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgb(47, 47, 47);
+  margin-top: 15px;
+  display: block;
+}
+
+.form-control{
+  width: 100%;
+  display: block;
+  border: 2px solid #ddd !important;
+  outline: none !important;
+  box-shadow: none;
+  height: 48px;
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.btn-save{
+  padding: 8px 21px;
+  color: #fff;
+  background-color: #5664d2;
+  border: 1px solid #5664d2;
+  display: inline-block;
+  outline: none !important;
+  font-size: 17px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 25px;
+}
+
+
+.navbar{
+  background-color: rgb(224, 224, 224);
+  padding: 0px 10px;
+  width: 90%;
+  margin: 30px auto;
+}
+
+ul{
+  list-style: none;
+}
+
+.navbar > ul{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar ul li{
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  cursor: pointer;
+  transition: all linear .2s;
+  color: #000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar ul li:hover{
+  color: #fff;
+  background-color: #5664d2;
+}
+
+.navbar ul > li > ul {
+  top: 100%;
+  left: 0;
+}
+
+.navbar ul li ul{
+  position: absolute;
+  width: 230px;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,.1);
+  display: none;
+  padding: 8px 0;
+  background: rgb(248 248 248);
+}
+
+.navbar ul > li > ul li{
+  margin: 0;
+  padding: 10px 15px;
+}
+
+.navbar ul > li > ul li ul{
+  left: 100%;
+  top: 1px;
+}
+
+.navbar ul li:hover > ul{
+  display: block;
+}
+
+.navbar ul>li{
+  padding: 10px;
+  margin: 0 5px;
+}
+
+li.hasSubmenu{
+  padding-right: 25px !important;
+}
+
+li.hasSubmenu:hover::after{
+  border-color: #fff;
+  transform: rotatex(
+    180deg) translate(0px, 5px);
+}
+
+.hasSubmenu::after{
+  content: '';
+  position: absolute;
+  border: 5px solid #333;
+  border-bottom-color: transparent !important;
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  top: 49%;
+  transition: all linear .2s;
+  right: 10px;
 }
